@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import TodoList from '../components/TodoList/TodoList';
 import { container, focusArea, header, list } from '../styles/home.module.css';
 
 export default function Home() {
@@ -12,6 +13,9 @@ export default function Home() {
       <main>
         <div className={focusArea}>
           <div className={header}>Your tasks for the day</div>
+          <div className={list}>
+            <TodoList />
+          </div>
         </div>
       </main>
 

@@ -23,10 +23,10 @@
 .header {
   font-size: 18px;
   color: darkslategray;
-  margin: 10px 10px;
+  padding: 10px 10px;
   text-align: center;
 }
 
 .list {
-  /* margin: 5px 0; */
+  padding: 10px 20px;
 }

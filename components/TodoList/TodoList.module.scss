@@ -1,0 +1,21 @@
+.todolist {
+  display: block;
+  margin: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid green;
+}
+
+.todo {
+  border-bottom: 1px solid lightgreen;
+  padding: 15px;
+
+  &:last-child {
+    border: 0;
+  }
+
+}
+
+.name {
+  font-size: 15px;
+  color: darkgreen;
+}
