@@ -16,6 +16,18 @@
   justify-content: space-between;
   align-items: center;
 
+  &.isChecked {
+    background: $turquoise-300;
+
+    .name {
+      color: $turquoise-100;
+      text-decoration-line: line-through;
+    }
+
+    .checkmark {
+      color: $turquoise-100;
+    }
+  }
   &:last-child {
     border: 0;
   }
