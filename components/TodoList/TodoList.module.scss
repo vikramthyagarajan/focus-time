@@ -11,11 +11,18 @@
   border-bottom: 1px solid $sunflower-200;
   padding: 15px;
   background: $orange-200;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &:last-child {
     border: 0;
   }
+}
 
+.checkmark {
+  color: $asbestos-900;
 }
 
 .name {
