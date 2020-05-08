@@ -1,13 +1,16 @@
+@import '../../styles//colors.scss';
+
 .todolist {
   display: block;
   margin: 10px 20px;
   border-radius: 5px;
-  border: 1px solid green;
+  border: 1px solid $sunflower-400;
 }
 
 .todo {
-  border-bottom: 1px solid lightgreen;
+  border-bottom: 1px solid $sunflower-200;
   padding: 15px;
+  background: $orange-200;
 
   &:last-child {
     border: 0;
@@ -16,6 +19,6 @@
 }
 
 .name {
-  font-size: 15px;
-  color: darkgreen;
+  font-size: 16px;
+  color: $asbestos-900;
 }

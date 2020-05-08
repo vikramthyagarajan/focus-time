@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import TodoList from '../components/TodoList/TodoList';
-import { container, focusArea, header, list } from '../styles/home.module.css';
+import { container, focusArea, header, list } from '../styles/home.module.scss';
 
 export default function Home() {
   return (
