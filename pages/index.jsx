@@ -1,0 +1,29 @@
+import Head from 'next/head'
+import { container, focusArea, header, list } from '../styles/home.module.css';
+
+export default function Home() {
+  return (
+    <div className={container}>
+      <Head>
+        <title>Focus Time</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main>
+        <div className={focusArea}>
+          <div className={header}>Your tasks for the day</div>
+        </div>
+      </main>
+
+      <footer>
+        <a
+          href="https://github.com/vikramthyagarajan"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        </a>
+      </footer>
+
+    </div>
+  )
+}

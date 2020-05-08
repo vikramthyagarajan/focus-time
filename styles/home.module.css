@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: lightgrey;
+  margin: 0 auto;
+}
+
+.container main {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: block;
+}
+
+.focusArea {
+  max-width: 400px;
+  height: 100%;
+  background: white;
+  margin: 0 auto;
+  padding: 10px 0 0 0;
+}
+
+.header {
+  font-size: 18px;
+  color: darkslategray;
+  margin: 10px 10px;
+  text-align: center;
+}
+
+.list {
+  /* margin: 5px 0; */
+}
