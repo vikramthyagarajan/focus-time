@@ -1,30 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+The year is 2020, a mutant virus ravages the planet, while a lone outlaw sits atop his Macbook looking to find the meaning of life. And then it clicks, the answer to cure the world and purge it of all its sin - Another Todo App
 
-## Getting Started
+## Backstory on our protagonist
 
-First, run the development server:
+Vikram's been out of the tech game for almost a year. The signs are there - his fingers are slow, unsure of its ability. Even his "Programmer is just someone who turns coffee into code" shirt lies in tatters at the corner of the room. The situation is dire, and who knows if he will ever be able to code again.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+He sits in front of his old familiar home desk again, adjusting his eyes to the blue screen again. "Javascript?" he says, holding a scant cigar between his lips and leaving a whiff of smoke in its trail. "I haven't heard that name in years"
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Reluctantly he whips out his bag and removes the stickers that once populated his favorite laptop for years. He'd taken them out much likr badge is ripped out of a detective that has been suspended of duty. But he couldn't ignore the call anymore. He could no longer live in a world where he didn't know what Kubernetes is.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Call to adventure
 
-## Learn More
+Some might say he wasn't needed. That the world could live without another Todo app. "But is it worth it?" comes a fast reply from Vikram. His cigar is still not halfway completed - he's actually not much of a cigar guy and is deeply regretting his decision. But Vikram does not shy away from commitment - except when the time he said he's done with tech forever and wanted to delve into music and comedy. But I digress.
 
-To learn more about Next.js, take a look at the following resources:
+"The fate of the world hangs in the balance. It seems like the tech world is sufferring and wants me back", he says. 
+- It does not. 
+"In many ways I feel like my leaving tech caused this whole crisis the world is going through", he says.
+- It did not. 
+"Rest assured I'm back again", he says.
+- This might in some ways be worse than the pandemic. I hope he doesn't break the internet
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## A Happy Ending
 
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+This might not be your typical story, and this might not be the ending that you expected. But here we are - reckoning with the truth of the world, a singular face of good in the undying depths of evil. 
 
-## Deploy on Vercel
+Will this Todo App solve the pandemic? 
+It will not. 
+But will it make you more productive? 
+Doubtful. 
+Will it be finished?
+Absolutely not. It's like you don't even know me
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Yet, here we are, a simple Todo App built in Next.js and GraphQL and Apollo, seeking to break down your life into smaller segments so you can focus on them one at a time, including giving you analytics on where you're falling behind. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+And so we sign off into a future of unknowns. Will we be triumphant? Will we move fast and break things? Will we hustle and survive? We don't know the answer to these questions. But we do know that we will all one day find the answer to the question we all seek - What the fuck is a Kubernetes
