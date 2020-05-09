@@ -1,9 +1,10 @@
 import Todo from './Todo';
 import { todolist } from './TodoList.module.scss'
-
-const todoActions = [{name: 'Get up', isChecked: true}, {name: 'Bathe', isChecked: true}, {name: 'Party', isChecked: false}]
+import getTodoState from './TodoState';
 
 export default function TodoList () {
+  let {todos: todoActions, addTodo, deleteTodo} = getTodoState()
+
   return (
     <div className={todolist}>
       {todoActions.map(action => {
