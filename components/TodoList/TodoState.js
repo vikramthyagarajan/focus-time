@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { format } from 'date-fns'
 
 
 const todoActions = [{id: 1, name: 'Get up', isChecked: true}, {id:2, name: 'Bathe', isChecked: true}, {id:3, name: 'Party', isChecked: false}]
@@ -7,7 +8,7 @@ export default function getTodoState() {
 
   function generateId(todo) {
     let date = new Date(todo.date || null)
-    return date.toLocalDateString();
+    return format(date, 'yyyy-MM-dd:HH-mm-ss');
   }
 
   function addTodo(name, date) {
