@@ -18,6 +18,7 @@
 
   &.isChecked {
     background: $turquoise-300;
+    border-color: $turquoise-200;
 
     .name {
       color: $turquoise-100;
@@ -28,8 +29,14 @@
       color: $turquoise-100;
     }
   }
+  &:first-child {
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+  }
   &:last-child {
     border: 0;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
   }
 }
 
