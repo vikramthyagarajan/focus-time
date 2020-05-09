@@ -1,14 +1,13 @@
 import Todo from './Todo';
 import { todolist } from './TodoList.module.scss'
-import getTodoState from './TodoState';
 
-export default function TodoList () {
-  let {todos: todoActions, addTodo, deleteTodo} = getTodoState()
+export default function TodoList (props) {
+  let todoActions = props.todos || [];
 
   return (
     <div className={todolist}>
       {todoActions.map(action => {
-        return <Todo key={action.name} action={action}></Todo>
+        return <Todo key={action.id} action={action}></Todo>
       })}
     </div>
   )
