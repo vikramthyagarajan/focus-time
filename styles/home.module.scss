@@ -20,6 +20,8 @@
   background: $clouds-200;
   margin: 0 auto;
   padding: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -32,4 +34,10 @@
 
 .list {
   padding: 10px 20px;
+  height: 100%;
+}
+
+.focusFooter {
+  display: flex;
+  justify-content: center;
 }

@@ -48,3 +48,38 @@
   font-size: 16px;
   color: $asbestos-900;
 }
+
+.addTodo {
+  width: 100%;
+  padding: 10px;
+
+  .textArea {
+    padding: 10px 0;
+    background: white;
+
+    input {
+      width: 100%;
+      padding: 5px 0;
+      border: 0;
+      border-bottom: 1px solid $asbestos-400;
+      color: $asbestos-900;
+      font-size: 16px;
+      outline: none;
+
+      &::placeholder {
+        color: $asbestos-500;
+      }
+    }
+  }
+
+  .addButton {
+    padding: 10px;
+    background: $turquoise-600;
+    border-radius: 5px;
+    color: $clouds-200;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+  }
+}
