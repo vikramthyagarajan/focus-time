@@ -1,7 +1,8 @@
 import Todo from './Todo';
-import { todolist } from './TodoList.module.scss'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost';
+import { todolist } from './TodoList.module.scss'
+import LoadingTodoList from '../Loading/LoadingTodoList';
 
 const getListApi = gql`
   {
@@ -13,10 +14,9 @@ const getListApi = gql`
   }
 `
 export default function TodoList (props) {
-  // let todoActions = props.todos || [];
-  const { loading, error, data} = useQuery(getListApi)
+  let { loading, error, data} = useQuery(getListApi)
 
-  if (loading) return <div>Loading</div>
+  if (loading) return <LoadingTodoList />
   if (error) return <div>Error</div>
   let todoActions = data.todos || []
 
