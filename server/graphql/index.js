@@ -2,6 +2,7 @@ import { gql } from 'apollo-server';
 
 export const typeDefs = gql`
   type Todo {
+    id: Int
     name: String
     date: String
     isChecked: Boolean
@@ -12,7 +13,7 @@ export const typeDefs = gql`
   }
 `
 
-const todos = [{name: 'Get up', isChecked: true}, {name: 'Bathe', isChecked: true}, {name: 'Party', isChecked: false}]
+const todos = [{id: 1, name: 'Get up', isChecked: true}, {id: 2, name: 'Bathe', isChecked: true}, {id: 3, name: 'Party', isChecked: false}]
 
 export const resolvers = {
   Query: {
