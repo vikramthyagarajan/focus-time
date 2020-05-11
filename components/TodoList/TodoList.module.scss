@@ -55,7 +55,7 @@
 
   .textArea {
     padding: 10px 0;
-    background: white;
+    // background: white;
 
     input {
       width: 100%;
@@ -65,6 +65,7 @@
       color: $asbestos-900;
       font-size: 16px;
       outline: none;
+      background: transparent;
 
       &::placeholder {
         color: $asbestos-500;
