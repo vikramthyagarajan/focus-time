@@ -1,6 +1,6 @@
 import '../styles/colors.scss'
 import '../styles/global.scss'
-import {setupApolloClient} from '../lib/network'
+import {setupApolloClient} from '../lib/network/network'
 import { ApolloProvider } from '@apollo/react-hooks'
 
 import { config } from '@fortawesome/fontawesome-svg-core'
