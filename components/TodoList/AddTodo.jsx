@@ -1,8 +1,13 @@
-import { addTodoRow, textArea, addButton } from './TodoList.module.scss';
-import { useState } from 'react';
+import { useState } from 'react'
+import { addTodoRow, textArea, addButton } from './TodoList.module.scss'
+import { getTodosApi } from '../../lib/network/todo-list'
 
 export default function AddTodo(props) {
   let [name, setName] = useState('');
+  let { loading, error } = getTodosApi();
+
+  if (loading || error)
+    return <></>
 
   return (
     <div className={addTodoRow}>
