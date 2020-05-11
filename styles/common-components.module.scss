@@ -1,0 +1,12 @@
+@import './colors.scss';
+
+.button {
+  padding: 10px;
+  background: $turquoise-600;
+  border-radius: 5px;
+  color: $clouds-200;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
