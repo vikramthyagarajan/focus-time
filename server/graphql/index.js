@@ -28,7 +28,6 @@ export const resolvers = {
   Mutation: {
     addTodo: (_parent, {name, date}, _context) => {
       let id = todos.length + 1;
-      console.log('todo', name);
       let todo = {id, name, date: date || Date.now(), isChecked: false}
       todos.push(todo)
       return todo
