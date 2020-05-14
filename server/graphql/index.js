@@ -15,6 +15,7 @@ export const typeDefs = gql`
 
   type Mutation {
     addTodo(name: String!, date: String): Todo!
+    checkTodo(id: String!, isChecked: Boolean!): Todo!
   }
 `
 
@@ -35,6 +36,12 @@ export const resolvers = {
         data: {
           id, name, date: newDate.toISOString(), isChecked: false
         }
+      })
+    },
+    checkTodo: function(_parent, {id, isChecked}, ctx) {
+      return ctx.prisma.todos.update({
+        where: {id},
+        data: {isChecked}
       })
     }
   }
