@@ -1,8 +1,9 @@
-import { gql } from 'apollo-server';
+import { gql } from 'apollo-server'
+import { generateId } from '../util/util'
 
 export const typeDefs = gql`
   type Todo {
-    id: Int
+    id: String
     name: String
     date: String
     isChecked: Boolean
@@ -21,16 +22,20 @@ const todos = [{id: 1, name: 'Get up', isChecked: true}, {id: 2, name: 'Bathe', 
 
 export const resolvers = {
   Query: {
-    todos: (_parent, _args, _context) => {
-      return todos
+    todos: (_parent, _args, ctx) => {
+      return ctx.prisma.todos.findMany({where: {}})
     }
   },
   Mutation: {
-    addTodo: (_parent, {name, date}, _context) => {
-      let id = todos.length + 1;
-      let todo = {id, name, date: date || Date.now(), isChecked: false}
-      todos.push(todo)
-      return todo
+    addTodo: async function(_parent, {name, date}, ctx) {
+      let newDate = date? new Date(date): new Date()
+      let id = await generateId()
+
+      return ctx.prisma.todos.create({
+        data: {
+          id, name, date: newDate.toISOString(), isChecked: false
+        }
+      })
     }
   }
 }
