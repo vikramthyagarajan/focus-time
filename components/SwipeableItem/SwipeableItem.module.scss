@@ -18,3 +18,10 @@
   height: 100%;
   right: 0;
 }
+
+.bouncingListItem {
+  transition: transform 1s ease-out;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}

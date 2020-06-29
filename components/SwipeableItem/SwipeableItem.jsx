@@ -1,4 +1,4 @@
-import { wrapper, content, background } from './SwipeableItem.module.scss'
+import { wrapper, content, background, bouncingListItem } from './SwipeableItem.module.scss'
 import { useRef, Component } from 'react'
 
 export function SwipeableContent({children}) {
@@ -39,6 +39,7 @@ class SwipeHandler {
     this.dragged = true
     this.dragStartX = clientX
     this.startTime = Date.now()
+    this.contentEl.className = content
     requestAnimationFrame(this.updatePosition)
   }
   
@@ -71,19 +72,22 @@ class SwipeHandler {
   onDragEnd() {
     if (this.dragged) {
       this.dragged = false
-      let threshold = 0.3
       if (!this.contentEl) {
         this.left = 0
         return
       }
 
       if (this.left < this.backgroundEl.offsetWidth * -1) {
-        this.left = -this.backgroundEl.offsetWidth * 2
+        this.left = this.contentEl.offsetWidth * -2
+        this.backgroundEl.style.transform = `translateX(${this.left}px)`
         this.onSwiped()
       }
       else {
         this.left = 0
       }
+
+      this.contentEl.className = bouncingListItem
+      this.contentEl.style.transform = `translateX(${this.left}px)`
     }
   }
 
