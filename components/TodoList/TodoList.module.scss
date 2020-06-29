@@ -40,6 +40,14 @@
   }
 }
 
+.deleteTodo {
+  padding: 10px;
+  background: $pomegranate-500;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .checkmark {
   color: $asbestos-900;
 }
