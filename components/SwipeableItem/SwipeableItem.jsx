@@ -19,6 +19,7 @@ class SwipeHandler {
   dragged = false
   contentEl = null
   backgroundEl = null
+  wrapperEl = null
   fpsInterval = 1000/60
   startTime = null
 
@@ -80,6 +81,7 @@ class SwipeHandler {
       if (this.left < this.backgroundEl.offsetWidth * -1) {
         this.left = this.contentEl.offsetWidth * -2
         this.backgroundEl.style.transform = `translateX(${this.left}px)`
+        this.wrapperEl.style.maxHeight = 0
         this.onSwiped()
       }
       else {
@@ -161,7 +163,9 @@ export class SwipeableItem extends Component {
     })
 
     return (
-      <div className={wrapper}>
+      <div className={wrapper}
+        ref={el => this.swipeHandler.wrapperEl = el}
+        >
         <div className={content} 
           ref={el => this.swipeHandler.contentEl = el}
           onMouseDown={this.swipeHandler.onDragStartMouse}
