@@ -82,7 +82,7 @@ class SwipeHandler {
       if (this.left < this.backgroundEl.offsetWidth * -1) {
         this.left = this.contentEl.offsetWidth * -2
         this.backgroundEl.style.transform = `translateX(${this.left}px)`
-        this.wrapperEl.style.maxHeight = 0
+        // this.wrapperEl.style.maxHeight = 0
         this.onSwiped()
       }
       else {
