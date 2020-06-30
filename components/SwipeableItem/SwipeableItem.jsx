@@ -22,6 +22,7 @@ class SwipeHandler {
   wrapperEl = null
   fpsInterval = 1000/60
   startTime = null
+  onSwipeCallback = null
 
   constructor() {
 
@@ -129,7 +130,8 @@ class SwipeHandler {
   }
 
   onSwiped() {
-    console.log('swiped');
+    console.log('swiped')
+    this.onSwipeCallback()
   }
 
 }
@@ -161,6 +163,7 @@ export class SwipeableItem extends Component {
         backgroundEl = child
       }
     })
+    this.swipeHandler.onSwipeCallback = this.props.onSwipe
 
     return (
       <div className={wrapper}

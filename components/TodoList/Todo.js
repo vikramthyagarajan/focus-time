@@ -16,8 +16,12 @@ export default function Todo({action}) {
     checkTodoHandler({variables: {id: action.id, isChecked: !action.isChecked}})
   })
 
+  const deleteTodoAction = useCallback(() => {
+    console.log('deleting action on server', action);
+  })
+
   return (
-    <SwipeableItem>
+    <SwipeableItem onSwipe={deleteTodoAction}>
       <SwipeableContent>
         <div className={cx({todo: true, isChecked: action.isChecked})}>
           <div className={name}>{action.name}</div>
