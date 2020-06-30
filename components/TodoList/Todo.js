@@ -3,7 +3,7 @@ import {todo, name, checkmark, isChecked, deleteTodo } from './TodoList.module.s
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faCheckCircle } from '@fortawesome/free-regular-svg-icons'
 import cn from 'classnames/bind'
-import { checkTodoApi } from '../../lib/network/todo-list'
+import { checkTodoApi, deleteTodoApi } from '../../lib/network/todo-list'
 
 import { SwipeableItem, SwipeableBackground, SwipeableContent } from '../SwipeableItem/SwipeableItem'
 
@@ -11,6 +11,7 @@ let cx = cn.bind({todo, isChecked});
 
 export default function Todo({action}) {
   let [ checkTodoHandler ] = checkTodoApi()
+  let [ deleteTodoHandler ] = deleteTodoApi()
 
   const onCheckClick = useCallback(() => {
     checkTodoHandler({variables: {id: action.id, isChecked: !action.isChecked}})
@@ -18,6 +19,7 @@ export default function Todo({action}) {
 
   const deleteTodoAction = useCallback(() => {
     console.log('deleting action on server', action);
+    deleteTodoHandler({variables: {id: action.id}})
   })
 
   return (
