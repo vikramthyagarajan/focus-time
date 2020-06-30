@@ -1,3 +1,4 @@
+import { useTransition, animated } from 'react-spring'
 import Todo from './Todo'
 import { getTodosApi } from '../../lib/network/todo-list'
 import { todolist } from './TodoList.module.scss'
@@ -6,15 +7,24 @@ import Error from '../Error/Error'
 
 export default function TodoList (props) {
   let { loading, error, data} = getTodosApi()
+  let todos = data? data.todos: []
+
+
+  let animatedTodos = useTransition(todos, t => t.id, {
+    from: {opacity: 0, transform: 'translate3d(0px, -10px, 0)', maxHeight: 1000},
+    enter: {opacity: 1, transform: 'translate3d(0px, 0, 0)', maxHeight: 1000},
+    leave: {opacity: 0.2, transform: 'translate3d(-50%, 0px, 0)', maxHeight: 0}
+  })
 
   if (loading) return <LoadingTodoList />
   if (error) return <Error />
-  let todoActions = data.todos || []
 
   return (
     <div className={todolist}>
-      {todoActions.map(action => {
-        return <Todo key={action.id} action={action}></Todo>
+      {animatedTodos.map(({item: action, props, key}) => {
+        return <animated.div key={key} style={props}>
+          <Todo key={key} action={action}></Todo>
+        </animated.div>
       })}
     </div>
   )
