@@ -8,9 +8,12 @@ import Error from '../Error/Error'
 export default function TodoList (props) {
   let { loading, error, data} = getTodosApi()
   let todos = data? data.todos: []
-  let sortBy = (key) => (a, b) => (a[key] > b[key]? 1: (b[key] > a[key]? -1: 0)) 
+  let sortBy = (key, isAsc = true, secondarySort = () => 0) => (a, b) => {
+    let w = isAsc? 1: -1, l = isAsc? -1: 1
+    return (a[key] > b[key]? w: (b[key] > a[key]? l: secondarySort(a, b))) 
+  }
 
-  todos = todos.sort(sortBy('isChecked'))
+  todos = todos.sort(sortBy('isChecked', true, sortBy('date')))
 
 
   let animatedTodos = useTransition(todos, t => t.id, {
