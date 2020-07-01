@@ -46,10 +46,9 @@ export const resolvers = {
       })
     },
     deleteTodo: function(_parent, {id}, ctx) {
-      return {id}
-      // return ctx.prisma.todos.delete({
-      //   where: { id }
-      // })
+      return ctx.prisma.todos.delete({
+        where: { id }
+      })
     },
   }
 }
