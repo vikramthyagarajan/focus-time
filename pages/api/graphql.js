@@ -3,7 +3,19 @@ import { ApolloServer } from 'apollo-server-micro';
 import { typeDefs, resolvers } from '../../server/graphql'
 import { PrismaClient } from '@prisma/client'
 
-let database = new PrismaClient()
+let database
+// Prisma gives a too many connections issue, I'm guessing this files runs mulitple times by Next
+// So creating a singleton in Dev
+if (process.env.NODE_ENV === 'production') {
+  database = new PrismaClient()
+}
+else {
+  if (!global.prisma) {
+    global.prisma = new PrismaClient()
+  }
+  database = global.prisma
+}
+
 let context = {
   prisma: database
 }
