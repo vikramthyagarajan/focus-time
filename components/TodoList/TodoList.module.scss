@@ -1,24 +1,29 @@
 @import '../../styles//colors.scss';
+@import '../../styles/palette.module.scss';
 
 .todolist {
   display: block;
   margin: 10px 20px;
   border-radius: 5px;
+  overflow: hidden;
   border: 0;
+  box-shadow: 0px 3px 2px -1px rgba(0,0,0,0.2),
+    0px 2px 2px 0px rgba(0,0,0,0.04)
+    ;
 }
 
 .todo {
   border-bottom: 1px solid $sunflower-200;
   padding: 15px;
-  background: $orange-200;
+  background: $accent;
   font-size: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &.isChecked {
-    background: $turquoise-300;
-    border-color: $turquoise-200;
+    background: $primaryLight;
+    border-color: $primaryLight;
 
     .name {
       color: $turquoise-100;
