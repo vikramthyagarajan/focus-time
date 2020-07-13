@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AddTodo() {
+export default function AddTodo(props) {
   const classes = useStyles(useTheme());
   let ref = useRef(null);
   let [date, setDate] = useState(new Date());
@@ -36,7 +36,7 @@ export default function AddTodo() {
 
         <Drawer
           anchor="bottom"
-          open={true}
+          open={props.isOpen}
           ModalProps={{disablePortal: true,
             BackdropProps: {classes: {root: classes.backdrop}}
             }}
@@ -56,7 +56,9 @@ export default function AddTodo() {
                     id="date-picker-inline"
                     label="Date picker inline"
                   />
-                <Fab disabled={name===""} classes={{root: classes.addTodoSubmit}} color="primary"><DoneIcon /></Fab>
+                <Fab disabled={name===""} classes={{root: classes.addTodoSubmit}} color="primary" onClick={props.onAction.bind(null, true)}>
+                  <DoneIcon />
+                </Fab>
               </form>
               </MuiPickersUtilsProvider>
             </div>
