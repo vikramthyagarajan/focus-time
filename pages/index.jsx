@@ -1,14 +1,8 @@
 import Head from 'next/head'
-import { Fab } from '@material-ui/core'
-import AddIcon from '@material-ui/icons/Add'
-import TodoList from '../components/TodoList/TodoList';
-import AddTodo from '../components/TodoList/AddTodo';
-import getTodoState from '../components/TodoList/TodoState';
-import { container, focusArea, header, list, focusFooter } from '../styles/home.module.scss';
+import Home from '../components/Home/Home';
+import { container } from '../styles/home.module.scss';
 
-export default function Home() {
-  let todoState = getTodoState();
-
+export default function App() {
   return (
     <div className={container}>
       <Head>
@@ -18,18 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className={focusArea}>
-          <div className={header}>Your tasks for the day</div>
-          <div className={list}>
-            <TodoList {...todoState} />
-          </div>
-          <div className={focusFooter}>
-            <Fab color="primary">
-              <AddIcon />
-            </Fab>
-            {/* <AddTodo {...todoState} /> */}
-          </div>
-        </div>
+        <Home />
       </main>
 
       <footer>
