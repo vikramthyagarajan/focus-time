@@ -46,7 +46,7 @@ export default function AddTodo(props) {
             <div className={addTodo}>
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
               <form>
-                <TextField id="todo-name" label="Todo" fullWidth onChange={handleNameChange} />
+                <TextField id="todo-name" label="Todo" fullWidth onChange={handleNameChange} value={name} />
                 <KeyboardDatePicker
                     disableToolbar
                     format="MM/dd/yyyy"
