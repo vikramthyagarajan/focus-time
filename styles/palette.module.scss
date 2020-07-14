@@ -6,9 +6,10 @@ $light-tertiary: #9d9d9d;
 $dark-tertiary: #1d1e22;
 $light-light: #ffffff;
 $dark-light: #ffffff;
-$accent: #ffe082;
+$accent: #ffedb5;
 $accent-secondary: #ffedb5;
 $primary: #82c0a9;
+// $primary: #D05538;
 $info: #d1d0ca;
 $success: #5cb46b;
 $warning: #daa433;
@@ -24,12 +25,14 @@ $primaryLight: lighten($primary, 15%);
 
 
 // Post it note colors
-$board: #CAB070;
+// $board: #CAB070;
+$board: #c0825f;
 
 // Marrakesh colors
 $red: #F1515C;
 $yellow: #FFD42C;
-$green: #5FC08B;
+$dark-green: #5FC08B;
+$green: #6DDA6D;
 $blue: #329AFE;
 $purple: #C392C2;
 
@@ -38,3 +41,13 @@ $purple: #C392C2;
 $primaryText: #fff;
 $accentText: #424949;
 $lightDim: #616a6b;
+
+
+
+// New Palette - 
+// From Colormind
+// Secondary- 5FC08B
+// Accent- C0825F
+// Primary- AA5440 Buttons. Dark color
+// Light- F3F5EF
+// Dark- 344B47
