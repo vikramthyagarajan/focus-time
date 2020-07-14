@@ -23,8 +23,8 @@ export default function Todo({action}) {
   })
 
   return (
-    <SwipeableItem onSwipe={deleteTodoAction}>
-      <SwipeableContent>
+    // <SwipeableItem onSwipe={deleteTodoAction}>
+    //   <SwipeableContent>
         <div className={cx({todo: true, isChecked: action.isChecked})}>
           <div className={name}>{action.name}</div>
           <div className="" onClick={onCheckClick}>
@@ -34,12 +34,12 @@ export default function Todo({action}) {
             }
           </div>
         </div>
-      </SwipeableContent>
-      <SwipeableBackground>
-        <div className={deleteTodo}>
-          Delete
-        </div>
-      </SwipeableBackground>
-    </SwipeableItem>
+    //   </SwipeableContent>
+    //   <SwipeableBackground>
+    //     <div className={deleteTodo}>
+    //       Delete
+    //     </div>
+    //   </SwipeableBackground>
+    // </SwipeableItem>
   )
 }
