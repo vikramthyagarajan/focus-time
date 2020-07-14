@@ -35,7 +35,7 @@
   text-align: center;
   justify-content: center;
   font-family: marker, Arial, Helvetica, sans-serif;
-  background: $accent-secondary;
+  background: $secondary;
   border: none;
   box-shadow: 0px 3px 2px -1px rgba(0,0,0,0.2),
     0px 2px 2px 0px rgba(0,0,0,0.04)
@@ -43,10 +43,9 @@
 
   &.isChecked {
     background: $accent;
-    border-color: $primaryLight;
 
     .name {
-      color: $asbestos-400;
+      color: white;
       text-decoration-line: line-through;
     }
 

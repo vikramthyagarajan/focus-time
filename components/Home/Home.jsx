@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className={focusArea}>
-      <div className={header}>Your tasks for the day</div>
+      <div className={header}>Focus Time</div>
       <div className={list}>
         <TodoList />
       </div>
