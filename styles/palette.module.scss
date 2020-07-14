@@ -75,8 +75,8 @@ $primary-secondary-lighter: lighten($primary-secondary, 20%);
 
 $secondary-dark: darken($secondary, 10%);
 $secondary-darker: darken($secondary, 20%);
-$secondary-light: lighten($secondary, 10%);
-$secondary-lighter: lighten($secondary, 20%);
+$secondary-light: #FFF2C8;
+$secondary-lighter: #FFF6DA;
 
 $secondary-accent-dark: darken($secondary-accent, 10%);
 $secondary-accent-darker: darken($secondary-accent, 20%);

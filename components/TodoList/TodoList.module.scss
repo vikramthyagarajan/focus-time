@@ -42,11 +42,12 @@
     ;
 
   &.isChecked {
-    background: $accent;
+    background: $secondary;
 
     .name {
-      color: white;
+      color: $secondaryText;
       text-decoration-line: line-through;
+      font-size: 16px;
     }
 
     .checkmark {
@@ -62,6 +63,11 @@
   //   border-bottom-right-radius: inherit;
   //   border-bottom-left-radius: inherit;
   // }
+}
+
+.doneTodo {
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .deleteTodo {

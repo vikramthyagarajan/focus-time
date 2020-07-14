@@ -1,5 +1,6 @@
 import { useTransition, animated } from 'react-spring'
 import Todo from './Todo'
+import DoneTodo from './DoneTodo'
 import { getTodosApi } from '../../lib/network/todo-list'
 import { todolist } from './TodoList.module.scss'
 import LoadingTodoList from '../Loading/LoadingTodoList'
@@ -14,9 +15,11 @@ export default function TodoList (props) {
   }
 
   todos = todos.sort(sortBy('isChecked', true, sortBy('date')))
+  let leftTodos = todos.filter(t => !t.isChecked);
+  let doneTodos = todos.filter(t => t.isChecked);
 
 
-  let animatedTodos = useTransition(todos, t => t.id, {
+  let animatedTodos = useTransition(leftTodos, t => t.id, {
     from: {opacity: 0, transform: 'translate3d(0px, -10px, 0)', maxHeight: 1000},
     enter: {opacity: 1, transform: 'translate3d(0px, 0, 0)', maxHeight: 1000},
     leave: {opacity: 0.2, transform: 'translate3d(-50%, 0px, 0)', maxHeight: 0}
@@ -32,6 +35,9 @@ export default function TodoList (props) {
           <Todo key={key} action={action}></Todo>
         </animated.div>
       })}
+      <div key="done">
+        <DoneTodo actions={doneTodos}></DoneTodo>
+      </div>
     </div>
   )
 }
