@@ -40,6 +40,8 @@
   padding: 10px 20px;
   height: 100%;
   overflow: auto;
+  background: $board;
+  background-image: url('/wood-pattern.png');
 }
 
 .focusFooter {

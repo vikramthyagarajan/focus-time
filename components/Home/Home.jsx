@@ -3,7 +3,7 @@ import { Fab } from '@material-ui/core'
 import AddIcon from '@material-ui/icons/Add'
 import TodoList from '../TodoList/TodoList';
 import AddTodo from './AddTodo';
-import { focusArea, header, list, focusFooter} from '../../styles/home.module.scss';
+import { focusArea, header, list, texture, focusFooter} from '../../styles/home.module.scss';
 import { getTodosApi } from '../../lib/network/todo-list'
 
 
