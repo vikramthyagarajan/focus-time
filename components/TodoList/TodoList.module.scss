@@ -10,6 +10,14 @@
   box-shadow: 0px 3px 2px -1px rgba(0,0,0,0.2),
     0px 2px 2px 0px rgba(0,0,0,0.04)
     ;
+
+
+  display: flex;
+  flex-flow: row wrap;
+  box-shadow: none;
+  justify-content: space-evenly;
+  margin: 0;
+
 }
 
 .todo {
@@ -18,15 +26,27 @@
   background: $accent;
   font-size: 12px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  border-radius: 2px;
+  flex-basis: 45%;
+  text-align: center;
+  justify-content: center;
+  font-family: marker, Arial, Helvetica, sans-serif;
+  background: $accent-secondary;
+  border: none;
+  box-shadow: 0px 3px 2px -1px rgba(0,0,0,0.2),
+    0px 2px 2px 0px rgba(0,0,0,0.04)
+    ;
 
   &.isChecked {
-    background: $primaryLight;
+    background: $accent;
     border-color: $primaryLight;
 
     .name {
-      color: $turquoise-100;
+      color: $asbestos-400;
       text-decoration-line: line-through;
     }
 
@@ -34,15 +54,15 @@
       color: $turquoise-100;
     }
   }
-  &:first-child {
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit;
-  }
-  &:last-child {
-    border: 0;
-    border-bottom-right-radius: inherit;
-    border-bottom-left-radius: inherit;
-  }
+  // &:first-child {
+  //   border-top-right-radius: inherit;
+  //   border-top-left-radius: inherit;
+  // }
+  // &:last-child {
+  //   border: 0;
+  //   border-bottom-right-radius: inherit;
+  //   border-bottom-left-radius: inherit;
+  // }
 }
 
 .deleteTodo {
@@ -55,11 +75,18 @@
 
 .checkmark {
   color: $asbestos-900;
+
+
+  display: none;
 }
 
 .name {
   font-size: 16px;
   color: $asbestos-900;
+
+  font-size: 18px;
+  text-align: center;
+  color: black;
 }
 
 .addTodoRow {
