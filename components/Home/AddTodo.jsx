@@ -1,12 +1,13 @@
-import { useState, useRef } from 'react';
-import { TextField, IconButton } from '@material-ui/core'
+import { useState, useCallback } from 'react';
+import { TextField } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer';
 import { Fab, makeStyles } from '@material-ui/core'
 import { useTheme } from '@material-ui/styles';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
-import { addTodo, addTodoSubmit } from '../../styles/home.module.scss';
 import DoneIcon from '@material-ui/icons/Done'
+import DateFnsUtils from '@date-io/date-fns';
+import { addTodo } from '../../styles/home.module.scss';
+import { addTodoApi } from '../../lib/network/todo-list'
 
 
 const useStyles = makeStyles(theme => ({
@@ -26,11 +27,18 @@ const useStyles = makeStyles(theme => ({
 
 export default function AddTodo(props) {
   const classes = useStyles(useTheme());
-  let ref = useRef(null);
   let [date, setDate] = useState(new Date());
   let [name, setName] = useState("");
   let handleDateChange = date => setDate(date);
   let handleNameChange = e => setName(e.target.value)
+
+  let [ addTodoHandler ] = addTodoApi()
+
+  const onTodoClick = useCallback(() => {
+    addTodoHandler({variables: {name, date: date.toString()}})
+    setName('')
+    setDate(new Date())
+  })
 
   return (
 
@@ -57,7 +65,7 @@ export default function AddTodo(props) {
                     label="Date picker inline"
                   />
                 <Fab disabled={name===""} classes={{root: classes.addTodoSubmit}} color="primary" onClick={props.onAction.bind(null, true)}>
-                  <DoneIcon />
+                  <DoneIcon onClick={onTodoClick} />
                 </Fab>
               </form>
               </MuiPickersUtilsProvider>
