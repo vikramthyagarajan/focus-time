@@ -45,6 +45,13 @@
   border-radius: 5px;
 }
 
+.listHeader {
+  color: $black;
+  font-family: marker;
+  text-align: center;
+  font-size: 30px;
+}
+
 .focusFooter {
   display: flex;
   justify-content: flex-end;
