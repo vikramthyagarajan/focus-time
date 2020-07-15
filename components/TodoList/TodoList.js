@@ -30,11 +30,12 @@ export default function TodoList (props) {
 
   return (
     <div className={todolist}>
-      {animatedTodos.map(({item: action, props, key}) => {
-        return <animated.div key={key} style={props}>
-          <Todo key={key} action={action}></Todo>
-        </animated.div>
+      {leftTodos.map((action, index) => {
+        return <Todo key={action.id} action={action}></Todo>
       })}
+      {/* {animatedTodos.map(({item: action, props, key}) => {
+        return <Todo key={key} action={action}></Todo>
+      })} */}
       <div key="done">
         <DoneTodo actions={doneTodos}></DoneTodo>
       </div>

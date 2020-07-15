@@ -20,26 +20,40 @@
 
 }
 
+.todoWrapper {
+  width: 150px;
+  max-width: 150px;
+  height: 150px;
+  margin: 5px;
+  flex-basis: 45%;
+  font-family: marker, Arial, Helvetica, sans-serif;
+  user-select: none;
+  position: relative;
+}
+
 .todo {
-  border-bottom: 1px solid $sunflower-200;
+  // border-bottom: 1px solid $sunflower-200;
   padding: 15px;
-  background: $accent;
-  font-size: 12px;
-  display: flex;
+  // background: $accent;
+  // font-size: 12px;
+  // display: flex;
 
   width: 150px;
   height: 150px;
-  margin: 5px;
+  // // margin: 5px;
   border-radius: 2px;
-  flex-basis: 45%;
-  text-align: center;
+  // flex-basis: 45%;
+  // text-align: center;
   justify-content: center;
   font-family: marker, Arial, Helvetica, sans-serif;
-  background: $secondary;
+  background: adjust-hue($secondary, 5%);
+  background-image: url("https://www.transparenttextures.com/patterns/embossed-paper.png");
   border: none;
   box-shadow: 0px 3px 2px -1px rgba(0,0,0,0.2),
-    0px 2px 2px 0px rgba(0,0,0,0.04)
-    ;
+    0px 2px 2px 0px rgba(0,0,0,0.04) ;
+
+  position: absolute;
+  left: 0;
 
   &.isChecked {
     background: $secondary;
@@ -128,4 +142,23 @@
     text-align: center;
     cursor: pointer;
   }
+}
+
+.underFlap {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 10px;
+  background: $secondary-lighter;
+  z-index: 5;
+}
+
+.paperCurl {
+  height: 100%;
+  position: absolute;
+  left: 10px;
+  width: 10px;
+  background: linear-gradient(to left, $secondary, $secondary-lighter);
+  opacity: 0.8;
+  z-index: 5;
 }
