@@ -19,7 +19,7 @@
 .focusArea {
   max-width: 400px;
   height: 100%;
-  background: white;
+  background: $primary-light;
   margin: 0 auto;
   padding: 10px 0 0 0;
   overflow: hidden;
@@ -31,7 +31,7 @@
 
 .header {
   font-size: 18px;
-  color: $primary;
+  color: $secondary;
   font-weight: bold;
   padding: 10px 10px;
   text-align: center;
@@ -41,7 +41,7 @@
   padding: 5px 0px;
   height: 100%;
   overflow: auto;
-  background: $primary-light;
+  background: $primary;
   background-image: url('/wood-pattern.png');
   border-radius: 5px;
 }
@@ -65,7 +65,7 @@
   padding: 20px;
   font-size: 18px;
   background: $secondary;
-  color: $grayDark;
+  color: $gray;
 }
 
 .addTodoSubmit {
@@ -73,5 +73,5 @@
   border-radius: 50%;
   font-size: 18px;
   background: green;
-  color: $grayDark;
+  color: $gray;
 }
