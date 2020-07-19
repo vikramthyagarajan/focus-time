@@ -27,7 +27,7 @@ export default function Todo({key, action}) {
     // <SwipeableItem onSwipe={deleteTodoAction}>
     //   <SwipeableContent>
     <div className={todoWrapper}>
-      <SwipeTodo action={action}>
+      <SwipeTodo action={action} onCheck={onCheckClick} onDelete={deleteTodoAction}>
           <div className={cx({todo: true, isChecked: action.isChecked})}>
             <div className={name}>{action.name}</div>
             <div className="" onClick={onCheckClick}>

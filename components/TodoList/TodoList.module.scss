@@ -152,10 +152,19 @@
   display: flex;
   align-items: center;
   font-size: 80px;
-  padding-left: 10px;
   z-index: 3;
   color: $error;
   position: absolute;
+
+  .checkIcon {
+    position: absolute;
+    left: 10px;
+  }
+
+  .deleteIcon {
+    position: absolute;
+    right: 10px;
+  }
 }
 
 .frontPaper {
